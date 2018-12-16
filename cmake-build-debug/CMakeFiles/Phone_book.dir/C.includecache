@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/projectC/Contact_book/./contact.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+
+D:/projectC/Contact_book/./s_linked_list.h
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+contact.h
+D:/projectC/Contact_book/./contact.h
+
+D:/projectC/Contact_book/contact_list.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+malloc.h
+-
+
+D:/projectC/Contact_book/main.c
+./contact.h
+D:/projectC/Contact_book/./contact.h
+contact_list.h
+D:/projectC/Contact_book/contact_list.h
+./s_linked_list.h
+D:/projectC/Contact_book/./s_linked_list.h
+
