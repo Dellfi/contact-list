@@ -15,5 +15,5 @@ int main() {
     list_push_back(list, &sun);
     list_push_back(list, &loppy);
     //printf("%p", &list->tail->next);
-    contact_list_save(list, contact);
+    contact_list_save();
 }

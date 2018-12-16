@@ -18,11 +18,11 @@ void contact_list_load() {
 
 }
 
-void contact_list_save(s_linked_list *list) {
+void contact_list_save(s_linked_list *list, s_contact* self) {
     FILE *file = fopen("save_list.txt", "w");
     s_node *temp = list->head;
     while(temp != NULL) {;
-        fprintf(file,"%s", co);
+        fprintf(file, "%s %s %s",self->full_name, self->address, self->phone);
         temp = temp->next;
     }
     fclose(file);
