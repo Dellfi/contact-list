@@ -16,5 +16,5 @@ int main() {
     list_push_back(list, &jon);
     list_push_back(list, &sun);
     list_push_back(list, &loppy);
-    contact_list_save(jon,path_to_file, list);
+    contact_list_save(path_to_file , list);
 }

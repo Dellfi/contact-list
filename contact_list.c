@@ -18,12 +18,12 @@ void contact_list_load() {
 
 }
 
-void contact_list_save(s_contact* self, char* path_to_file, s_linked_list *list) {
+void contact_list_save(char* path_to_file, s_linked_list *list) {
     FILE *file = fopen(path_to_file, "w");
-    s_node *temp = list->head;
-    while(temp != NULL) {;
-        contact_write(self, file);
-        temp = temp->next;
+    s_node *new_node = list->head;
+    while(new_node != NULL) {
+        contact_write(new_node->data, file);
+        new_node = new_node->next;
     }
     fclose(file);
 }
