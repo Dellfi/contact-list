@@ -3,6 +3,9 @@
 #include "./s_linked_list.h"
 
 int main() {
+
+    FILE *file = fopen("save_list.txt", "w");
+
     s_linked_list *list = list_new();
     //contact_from_file_to_list(list);
     s_contact jon = {"Jonny", "Zp", "1322"};
@@ -15,5 +18,5 @@ int main() {
     list_push_back(list, &sun);
     list_push_back(list, &loppy);
     //printf("%p", &list->tail->next);
-    contact_list_save();
+    contact_list_save(file ,list, jon);
 }
