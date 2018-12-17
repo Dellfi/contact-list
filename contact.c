@@ -1,4 +1,4 @@
-#include "contact.h"
+#include "./contact.h"
 
 char *ui_prompt_string(const char *prompt) {
     printf(prompt);
@@ -25,7 +25,7 @@ s_contact *contact_new(void) {
 }
 
 void contact_prompt(s_contact *self){
-    self->full_name = ui_prompt_string("Enter user full name: ");
+    self->full_name = ui_prompt_string("\nEnter user full name: ");
     self->address = ui_prompt_string("Enter user address: ");
     self->phone = ui_prompt_string("Enter user phone: ");
 }

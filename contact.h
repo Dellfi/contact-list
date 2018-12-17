@@ -16,10 +16,7 @@ typedef struct
 char *ui_prompt_string(const char *prompt);
 char* io_read_line(FILE *file);
 
-// Constructor
 s_contact *contact_new();
-
-// Methods
 void contact_prompt(s_contact *self);
 void contact_print(s_contact *self);
 void contact_write(s_contact *self, FILE *fd);

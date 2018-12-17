@@ -23,5 +23,5 @@ void *list_push_back(s_linked_list *self, void* data);
 void *list_push_front(s_linked_list *self, void* data);
 void *list_pop_back(s_linked_list *self);
 void *list_pop_front(s_linked_list *self);
-void *list_search(s_linked_list *self);
+
 #endif //PHONE_BOOK_S_LINKED_LIST_H

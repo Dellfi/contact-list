@@ -1,5 +1,5 @@
-#include "contact.h"
-#include "s_linked_list.h"
+#include "./contact.h"
+#include "./s_linked_list.h"
 
 s_linked_list *list_new(void){
     s_linked_list *list = malloc(sizeof(s_linked_list));
@@ -15,12 +15,12 @@ void *list_push_back(s_linked_list *self, void* data) {
     new_node->data = data;
     new_node->next = NULL;
     // Empty list
+    contact_print(new_node->data);
     if (self->head == NULL) {
         self->head = new_node;
         self->tail = new_node;
         return NULL;
     }
-
     self->tail->next = new_node;
     self->tail = new_node;
 
@@ -31,11 +31,12 @@ void *list_push_front(s_linked_list *self, void *data) {
 
     self->size += 1;
 
+
     new_node->data = data;
     if (self->head == NULL) {
         self->head = self->tail = new_node;
     }
-
+    contact_print(new_node->data);
     new_node->next = self->head;
     self->head = new_node;
 
