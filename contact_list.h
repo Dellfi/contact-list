@@ -6,8 +6,9 @@
 #include <string.h>
 #include <malloc.h>
 
+void contact_list_print(s_linked_list *self);
 void removed_contact(s_linked_list *self);
-void contact_list_request_push();
+void contat_list_prompt_new(s_linked_list *self);
 void contact_list_load();
 void contact_list_save();
 

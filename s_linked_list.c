@@ -12,10 +12,12 @@ s_linked_list *list_new(void){
 
 void *list_push_back(s_linked_list *self, void* data) {
     s_node *new_node = malloc(sizeof(s_node));
+
+    self->size += 1;
+
     new_node->data = data;
     new_node->next = NULL;
     // Empty list
-    contact_print(new_node->data);
     if (self->head == NULL) {
         self->head = new_node;
         self->tail = new_node;
@@ -38,7 +40,6 @@ void *list_push_front(s_linked_list *self, void *data) {
     contact_print(new_node->data);
     new_node->next = self->head;
     self->head = new_node;
-    printf("\nList size: %i", self->size);
 }
 
 void *list_pop_back(s_linked_list *self) {
