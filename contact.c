@@ -1,5 +1,6 @@
 #include "./contact.h"
 
+
 char *ui_prompt_string(const char *prompt) {
     printf(prompt);
     return io_read_line(stdin);
@@ -50,5 +51,3 @@ void contact_print(s_contact *self) {
             self->address,
             self->phone);
 }
-
-

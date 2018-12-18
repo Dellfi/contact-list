@@ -1,10 +1,8 @@
-//#include "./contact.h"
-//#include "./contact_list.h"
-//#include "./s_linked_list.h"
 #include "./UI.h"
-int main() {
 
-    char* path_to_file = ("save_list.txt");
+int main() {
+    char* path_to_file_save_list = ("save_list.txt");
+    char* path_to_file_load_list = ("load_list.txt");
     s_linked_list *list = list_new();
 
 /*
@@ -14,4 +12,5 @@ int main() {
 */
 
     user_interface(list);
+    return 0;
 }

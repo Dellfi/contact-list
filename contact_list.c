@@ -2,8 +2,8 @@
 #include "./contact_list.h"
 #include "./contact.h"
 
-void contact_list_load(s_linked_list *self) {
-    FILE *file = fopen("test.txt", "r");
+void contact_list_load(char* path_to_file_load_list, s_linked_list *self) {
+    FILE *file = fopen(path_to_file_load_list, "r");
 
     s_contact *contact = contact_new();
 
@@ -19,8 +19,8 @@ void contact_list_load(s_linked_list *self) {
     fclose(file);
 }
 
-void contact_list_save(char* path_to_file, s_linked_list *self) {
-    FILE *file = fopen(path_to_file, "w");
+void contact_list_save(char* path_to_file_save_list, s_linked_list *self) {
+    FILE *file = fopen(path_to_file_save_list, "w");
 
     s_node *new_node = self->head;
 
@@ -30,4 +30,9 @@ void contact_list_save(char* path_to_file, s_linked_list *self) {
     }
 
     fclose(file);
+}
+
+void contact_list_request_push(s_contact *contact, s_linked_list *self) {
+    contact_prompt(contact);
+    list_push_front(self, contact);
 }

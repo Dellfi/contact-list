@@ -31,7 +31,6 @@ void *list_push_front(s_linked_list *self, void *data) {
 
     self->size += 1;
 
-
     new_node->data = data;
     if (self->head == NULL) {
         self->head = self->tail = new_node;
@@ -39,7 +38,7 @@ void *list_push_front(s_linked_list *self, void *data) {
     contact_print(new_node->data);
     new_node->next = self->head;
     self->head = new_node;
-
+    printf("\nList size: %i", self->size);
 }
 
 void *list_pop_back(s_linked_list *self) {
@@ -74,7 +73,7 @@ void *list_pop_front(s_linked_list *self) {
     if (self->head == NULL) {
         return NULL;
     }
-
+    printf("\nContact deleted.\n");
     self->size -= 1;
 
     s_node *current_node = self->head;

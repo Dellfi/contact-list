@@ -6,6 +6,7 @@
 #include <string.h>
 #include <malloc.h>
 
+void contact_list_request_push();
 void contact_list_load();
 void contact_list_save();
 
