@@ -3,15 +3,16 @@
 void print_help() {
     printf("\nTo add a contact to the beginning, press [a].\n");
     printf("To delete the first contact, press[d].\n");
-    printf("For search contact, press[s]\n");
+    printf("For quest contact, press[q]\n");
     printf("For print list, press[p]\n");
     printf("For load list, press[l]\n");
+    printf("For save list, press[s]");
     printf("For help, press[h]\n");
-    printf("To exit, press[q].");
+    printf("To exit, press[e].");
     printf("\nSelection: ");
 }
 
-void user_interface (s_linked_list *list) {
+void user_interface (s_linked_list *self) {
     print_help();
 
     char ch;
@@ -20,28 +21,30 @@ void user_interface (s_linked_list *list) {
 
         switch (ch) {
             case 'a':
-                contat_list_prompt_new(list);
-                contact_list_print(list);
+                contat_list_prompt_new(self);
+                contact_list_print(self);
                 break;
             case 'd':
-                //removed_contact(list);
+                contact_list_removed_contact(self);
                 break;
-            case 's':
+            case 'q':
                 //Need to work on a search
                 printf("\nEnter last name for search: ");
                 break;
             case 'p':
-                printf("\nContact list: \n");
-                contact_list_print(list);
+                contact_list_print(self);
                 break;
             case 'l':
-                contact_list_load(list);
+                contact_list_load(self, "load_list.txt");
                 printf("\nList is loaded");
+                break;
+            case 's':
+                contact_list_save(self, "save_list.txt");
                 break;
             case 'h':
                 print_help();
                 break;
-            case 'q':
+            case 'e':
                 exit(1);
             default:
                 printf("\nSelect the value from the presented\n");

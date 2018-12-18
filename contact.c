@@ -52,9 +52,9 @@ void contact_print(s_contact *self) {
             self->phone);
 }
 
-void contact_free(s_contact *self) {
-    //free(self->full_name);
-    //free(self->address);
-    //free(self->phone);
+void contact_remove(s_contact *self) {
+    free(self->full_name);
+    free(self->address);
+    free(self->phone);
     free(self);
 }

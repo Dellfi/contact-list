@@ -2,12 +2,11 @@
 #include "./contact_list.h"
 #include "./contact.h"
 
-void contact_list_load(char* path_to_file_load_list, s_linked_list *self) {
-    FILE *file = fopen(path_to_file_load_list, "r");
-
-    s_contact *contact = contact_new();
+void contact_list_load(s_linked_list *self, char* file_path) {
+    FILE *file = fopen(file_path, "r");
 
     while(1) {
+        s_contact *contact = contact_new();
         contact_read(contact, file);
         list_push_back(self, contact);
         contact_print(self->head->data);
@@ -19,8 +18,8 @@ void contact_list_load(char* path_to_file_load_list, s_linked_list *self) {
     fclose(file);
 }
 
-void contact_list_save(char* path_to_file_save_list, s_linked_list *self) {
-    FILE *file = fopen(path_to_file_save_list, "w");
+void contact_list_save(s_linked_list *self, char* path) {
+    FILE *file = fopen(path, "w");
 
     s_node *new_node = self->head;
 
@@ -40,7 +39,7 @@ void contat_list_prompt_new(s_linked_list *self) {
 
 void contact_list_removed_contact(s_linked_list *self) {
     s_contact* removed_node = list_pop_back(self);
-    contact_free(removed_node);
+    contact_remove(removed_node);
 }
 
 void contact_list_print(s_linked_list *self) {
@@ -54,5 +53,4 @@ void contact_list_print(s_linked_list *self) {
         contact_print(temp_node->data);
         temp_node = temp_node->next;
     }
-
 }
