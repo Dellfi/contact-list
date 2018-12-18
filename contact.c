@@ -51,3 +51,10 @@ void contact_print(s_contact *self) {
             self->address,
             self->phone);
 }
+
+void contact_free(s_contact *self) {
+    //free(self->full_name);
+    //free(self->address);
+    //free(self->phone);
+    free(self);
+}

@@ -14,22 +14,15 @@ void user_interface (s_linked_list *list) {
     print_help();
 
     char ch;
-    s_contact* contact = contact_new();
-    s_contact* removed_contact = list_pop_front(list);
-
     while(true) {
         scanf("%c", &ch);
 
         switch (ch) {
             case 'a':
-                contact;
-                contact_list_request_push(contact, list);
-                free(contact);
+                contact_list_request_push(list);
                 break;
             case 'd':
-                removed_contact;
-                free(removed_contact);
-                //printf("\nContact deleted\n");
+                removed_contact(list);
                 break;
             case 's':
                 //Need to work on a search

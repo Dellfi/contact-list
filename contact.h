@@ -22,6 +22,7 @@ void contact_read(s_contact *self, FILE *fd);
 void contact_prompt(s_contact *self);
 void contact_print(s_contact *self);
 void contact_print(s_contact *self);
+void contact_free(s_contact *self);
 s_contact *contact_new();
 
 #endif //PHONE_BOOK_CONTACT_H

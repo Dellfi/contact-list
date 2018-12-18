@@ -32,7 +32,14 @@ void contact_list_save(char* path_to_file_save_list, s_linked_list *self) {
     fclose(file);
 }
 
-void contact_list_request_push(s_contact *contact, s_linked_list *self) {
+void contact_list_request_push(s_linked_list *self) {
+    s_contact* contact = contact_new();
     contact_prompt(contact);
     list_push_front(self, contact);
+    contact_free(contact);
+}
+
+void contact_list_removed_contact(s_linked_list *self) {
+    s_contact* removed_node = list_pop_back(self);
+    contact_free(removed_node);
 }

@@ -10,7 +10,6 @@ int main() {
     contact_prompt(contact);
     list_push_back(list, contact);
 */
-
     user_interface(list);
     return 0;
 }
