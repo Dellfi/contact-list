@@ -60,14 +60,13 @@ void contact_list_search(linked_list *self) {
         return;
     }
 
-    char buffer[255] = { 0 };
-    printf("Enter name for search: ");
-    scanf("%s", &buffer);
+    printf("\nEnter name for search: ");
+    char* ref  = ui_prompt_string(stdin);
 
     s_node* temp_node = self->head;
     while(temp_node != NULL) {
         s_contact* current_node = temp_node->data;
-        if(strcmp(current_node->full_name, buffer) == 0) {
+        if(strcmp(current_node->full_name, ref) == 0) {
              contact_print(temp_node->data);
          }
         current_node = temp_node->data;

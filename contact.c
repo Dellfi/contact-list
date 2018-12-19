@@ -2,7 +2,7 @@
 
 
 char *ui_prompt_string(const char *prompt) {
-    printf(prompt);
+    //printf(prompt);
     return io_read_line(stdin);
 }
 
