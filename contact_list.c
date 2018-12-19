@@ -70,6 +70,7 @@ void contact_list_search(linked_list *self, char *ref) {
         temp_node = temp_node->next;
     }
 
+    free(ref);
 }
 
 
