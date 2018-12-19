@@ -16,6 +16,8 @@ void user_interface (linked_list *self) {
     print_help();
 
     char ch;
+    char* search;
+
     while(true) {
         scanf("%c", &ch);
 
@@ -27,7 +29,9 @@ void user_interface (linked_list *self) {
                 contact_list_removed_contact(self);
                 break;
             case 'q':
-                contact_list_search(self, ui_prompt_string("\nEnter name for search: "));
+                search = ui_prompt_string("\nEnter name for search: ");
+                contact_list_search(self, search);
+                free(search);
                 break;
             case 'p':
                 contact_list_print(self);
@@ -38,6 +42,7 @@ void user_interface (linked_list *self) {
                 break;
             case 's':
                 contact_list_save(self, "save_list.txt");
+                printf("\nList save.");
                 break;
             case 'h':
                 print_help();

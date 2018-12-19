@@ -65,7 +65,9 @@ void contact_list_search(linked_list *self, char *ref) {
         s_contact* current_node = temp_node->data;
         if(strcmp(current_node->full_name, ref) == 0) {
              contact_print(temp_node->data);
+             return;
          }
+
         current_node = temp_node->data;
         temp_node = temp_node->next;
     }
