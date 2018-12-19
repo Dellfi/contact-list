@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "./s_linked_list.h"
+#include "./linked_list.h"
 
 typedef struct
 {

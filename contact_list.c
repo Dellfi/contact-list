@@ -1,4 +1,4 @@
-#include "./s_linked_list.h"
+#include "./linked_list.h"
 #include "./contact_list.h"
 #include "./contact.h"
 
@@ -54,14 +54,11 @@ void contact_list_print(linked_list *self) {
     }
 }
 
-void contact_list_search(linked_list *self) {
+void contact_list_search(linked_list *self, char *ref) {
     if(self->head == NULL) {
         printf("\nList empty.\n");
         return;
     }
-
-    printf("\nEnter name for search: ");
-    char* ref  = ui_prompt_string(stdin);
 
     s_node* temp_node = self->head;
     while(temp_node != NULL) {

@@ -27,7 +27,7 @@ void user_interface (linked_list *self) {
                 contact_list_removed_contact(self);
                 break;
             case 'q':
-                contact_list_search(self);
+                contact_list_search(self, ui_prompt_string("\nEnter name for search: "));
                 break;
             case 'p':
                 contact_list_print(self);
