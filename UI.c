@@ -12,7 +12,7 @@ void print_help() {
     printf("\nSelection: ");
 }
 
-void user_interface (s_linked_list *self) {
+void user_interface (linked_list *self) {
     print_help();
 
     char ch;
@@ -22,14 +22,12 @@ void user_interface (s_linked_list *self) {
         switch (ch) {
             case 'a':
                 contat_list_prompt_new(self);
-                contact_list_print(self);
                 break;
             case 'd':
                 contact_list_removed_contact(self);
                 break;
             case 'q':
-                //Need to work on a search
-                printf("\nEnter last name for search: ");
+                contact_list_search(self);
                 break;
             case 'p':
                 contact_list_print(self);

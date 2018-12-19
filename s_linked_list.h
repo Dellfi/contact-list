@@ -16,12 +16,12 @@ typedef struct{
     s_node *head;
     s_node *tail;
     unsigned int size;
-} s_linked_list;
+} linked_list;
 
-s_linked_list *list_new(void);
-void *list_push_back(s_linked_list *self, void* data);
-void *list_push_front(s_linked_list *self, void* data);
-void *list_pop_back(s_linked_list *self);
-void *list_pop_front(s_linked_list *self);
+linked_list *list_new(void);
+void *list_push_back(linked_list *self, void* data);
+void *list_push_front(linked_list *self, void* data);
+void *list_pop_back(linked_list *self);
+void *list_pop_front(linked_list *self);
 
 #endif //PHONE_BOOK_S_LINKED_LIST_H
